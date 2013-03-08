@@ -1,4 +1,4 @@
-Express Hogan Heroku Template
+WebRelay-Door
 =============================
 
-Useful for quickly spinning up heroku instances of relatively static sites.
+Useful, quick and dirty, "security through obscurity" app for providing web-based entry to WebRelay triggers.

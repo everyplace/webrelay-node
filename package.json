@@ -1,5 +1,5 @@
 {
-  "name": "Express-Hogan-Template",
+  "name": "WebRelay-Door",
   "version": "0.1.0",
   "dependencies": {
     "express": "*",
