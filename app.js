@@ -1,11 +1,9 @@
 var express = require('express')
-  , routes = require('./routes')
-  , user = require('./routes/user')
-  , test = require('./routes/test')
   , http = require('http')
   , path = require('path')
   , request = require('request')
-  , testMiddleware = require('./models/testMiddleware');
+  , door = require('./middleware/door')
+  , view = require('./routes/view');
 
 var app = module.exports = express();
 
@@ -20,21 +18,17 @@ app.configure(function(){
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
 });
-
-app.configure('development', function(){
-  app.use(express.errorHandler());
-});
-
-console.log(testMiddleware);
   
-app.get('/', routes.index);
-app.get('/test', testMiddleware.index, test.test);
-app.get('/users', user.list);
+app.get('/', door.knock, view.door);
+app.post('/open', door.open);
 
 if(process.env.DEBUG == 'true') {
   console.log("DEBUG ENABLED");
+  
+  var debug = require('./middleware/debug');
+  app.post('/trigger', debug.output);
 };
 
 http.createServer(app).listen(app.get('port'), function(){
-  console.log("Express server listening on port " + app.get('port'));
+  console.log("WebRelay-Door listening on port " + app.get('port'));
 });

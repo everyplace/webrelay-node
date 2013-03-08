@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{page.title}}</title>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="viewport" content="width=320.1, user-scalable=no" />
+		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+		<script src="/javascripts/jquery-latest.js"></script>
+		<script src="/javascripts/door.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>{{app.title}}</h1>
+		</header>
+		
+		{{#debug}}
+		<footer>
+			<h2>{{debug}}</h2>
+		</footer>
+		{{/debug}}
+	</body>
+</html>
