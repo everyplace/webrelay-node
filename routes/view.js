@@ -6,7 +6,7 @@
 exports.door = function(req, res){
 	var data = {
 		page: {
-			title:"WebRelay Door"
+			title:"Door v2"
 		}, 
 		app: {
 			title:"Apartm.net Door"

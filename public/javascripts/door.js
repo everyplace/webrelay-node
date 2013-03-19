@@ -14,4 +14,8 @@ $(document).ready(function(){
 			opensesame();
 		});
 
+		if(window.navigator.standalone) {
+			opensesame();
+		}
+
 	});
